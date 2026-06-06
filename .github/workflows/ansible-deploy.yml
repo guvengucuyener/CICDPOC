@@ -23,6 +23,10 @@ jobs:
         run: |
           echo '${{ github.event.inputs.network_data }}' > ui_input.json
 
+      - name: Update AVD Inventory Files
+        run: |
+          python update_inventory.py
+
       # 5. Executes your first playbook, build configs
       - name: Run Playbook 1 (Build Configuration)
         run: |
