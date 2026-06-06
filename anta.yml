@@ -1,0 +1,10 @@
+---
+- name: Run ANTA
+  hosts: FABRIC # <-- Targeted devices
+  connection: local
+  gather_facts: false
+  ignore_errors: true
+  tasks:
+    - name: Run ANTA on EOS devices
+      import_role:
+        name: arista.avd.anta_runner

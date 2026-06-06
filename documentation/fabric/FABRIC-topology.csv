@@ -1,0 +1,18 @@
+Node Type,Node,Serial Number,Node Interface,Peer Type,Peer Node,Peer Serial Number,Peer Interface,Node Interface Enabled
+l3leaf,xdc2-leaf-01,,Ethernet1,spine,xdc2-spine-01,,Ethernet1,True
+l3leaf,xdc2-leaf-01,,Ethernet2,spine,xdc2-spine-02,,Ethernet1,True
+l3leaf,xdc2-leaf-01,,Ethernet3,server,server1,,PCI1,True
+l3leaf,xdc2-leaf-02,,Ethernet1,spine,xdc2-spine-01,,Ethernet2,True
+l3leaf,xdc2-leaf-02,,Ethernet2,spine,xdc2-spine-02,,Ethernet2,True
+l3leaf,xdc2-leaf-03,,Ethernet1,spine,xdc2-spine-01,,Ethernet3,True
+l3leaf,xdc2-leaf-03,,Ethernet2,spine,xdc2-spine-02,,Ethernet3,True
+l3leaf,xdc2-leaf-04,,Ethernet1,spine,xdc2-spine-01,,Ethernet4,True
+l3leaf,xdc2-leaf-04,,Ethernet2,spine,xdc2-spine-02,,Ethernet4,True
+spine,xdc2-spine-01,,Ethernet1,l3leaf,xdc2-leaf-01,,Ethernet1,True
+spine,xdc2-spine-01,,Ethernet2,l3leaf,xdc2-leaf-02,,Ethernet1,True
+spine,xdc2-spine-01,,Ethernet3,l3leaf,xdc2-leaf-03,,Ethernet1,True
+spine,xdc2-spine-01,,Ethernet4,l3leaf,xdc2-leaf-04,,Ethernet1,True
+spine,xdc2-spine-02,,Ethernet1,l3leaf,xdc2-leaf-01,,Ethernet2,True
+spine,xdc2-spine-02,,Ethernet2,l3leaf,xdc2-leaf-02,,Ethernet2,True
+spine,xdc2-spine-02,,Ethernet3,l3leaf,xdc2-leaf-03,,Ethernet2,True
+spine,xdc2-spine-02,,Ethernet4,l3leaf,xdc2-leaf-04,,Ethernet2,True

@@ -1,0 +1,52 @@
+---
+all:
+  children:
+    CVAAS:
+      hosts:
+        cvaas:
+          # Ansible variables used by the ansible_avd and ansible_cvp roles to push configuration to devices via CVP
+          ansible_host: www.cv-prod-us-4.arista.io
+          ansible_user: ansible
+          ansible_password: eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaWQiOjc1NTE1Nzk2MzkyMDcwMjM3NDQsImRzbCI6ImN2LXByb2QtdXMtNCIsImRzdCI6ImFjY291bnQiLCJleHAiOjE4MTIwNTYzOTksImlhdCI6MTc4MDY1MDM1OSwib2dpIjo3NTUxNTc5NjM5MjA2OTk2NTI0LCJvZ24iOiJhcmlzdGEtbGFicy1pbnRlcm5hbC05OSIsInNpZCI6IjAxOWU5NzA4LTNhZjktN2JiYy1iMjEzLWJjZTE0NTQ2YzM0ZSJ9.lv3NGvGGQ9yDiuW_3G-4kCl4-juZ-5G6EBQChwjm1eVv47PpoLFU6KW60-qTBmVL1vEuU-npfvB_Z1rmNmC20Q
+          ansible_connection: httpapi
+          ansible_httpapi_use_ssl: True
+          ansible_httpapi_validate_certs: True
+          ansible_httpapi_port: 443
+          ansible_network_os: eos
+
+    FABRIC:
+      children:
+        DC2_FABRIC:
+          children:
+            DC2_SPINES:
+              hosts:
+                ceos9:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 200
+                ceos10:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 200
+            DC2_L3_LEAVES:
+              hosts:
+                ceos11:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 20010
+                ceos12:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 200
+                ceos13:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 200
+                ceos14:
+                  ansible_host: 10.83.12.71
+                  ansible_port: 200
+    NETWORK_SERVICES:
+      children:
+        DC2_L3_LEAVES:
+        DC2_L2_LEAVES:
+    CONNECTED_ENDPOINTS:
+      children:
+        DC2_L3_LEAVES:
+        DC2_L2_LEAVES:
+
+

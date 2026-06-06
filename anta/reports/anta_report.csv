@@ -1,0 +1,148 @@
+Device,Test Name,Test Status,Message(s),Test description,Test category
+xdc2-leaf-01,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 351,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-leaf-01,VerifyInterfacesStatus,failure,Interface: Ethernet3 - Not configured,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-leaf-01,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 09:17:05 xdc2-leaf-01 LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ Jun  6 09:43:49 xdc2-leaf-01 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-27b24134-0222-4d0c-b130-b0282fa17699 has expired.The system configuration will be rolled back.
+ Jun  6 10:33:32 xdc2-leaf-01 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-c59325a4-cca1-45f2-a78e-bef26bf2c92c has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-leaf-02,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 477,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-leaf-02,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 09:17:42 xdc2-leaf-02 LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ Jun  6 10:33:33 xdc2-leaf-02 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-1f07ddf1-c122-4336-a7e0-d5e49d243202 has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-leaf-03,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 340,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-leaf-03,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 10:33:33 xdc2-leaf-03 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-ce7d5866-9004-400d-8eba-be5c892a3701 has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-leaf-04,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 338,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-leaf-04,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 09:16:56 xdc2-leaf-04 NorCalInit: %HARDWARE-0-SYSTEM_IDENTIFICATION_FAILED: Failed to identify this system
+ Jun  6 09:17:05 xdc2-leaf-04 LoadConfig: %SYSDB-3-STARTUP_CONFIG_PARSE_ERROR: Errors encountered in parsing the startup-config
+ Jun  6 10:33:33 xdc2-leaf-04 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-a708ffc9-1ebd-4049-bfbf-795e819fc03c has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-spine-01,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 330,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-spine-01,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 10:33:33 xdc2-spine-01 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-c0ab593a-2497-492d-9cf1-eb108658f14d has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-spine-02,VerifyInterfaceDiscards,failure,Interface: Management0 - Non-zero discard counter(s): inDiscards: 321,Verifies that the interfaces packet discard counters are equal to zero.,Interfaces
+xdc2-spine-02,VerifyLoggingErrors,failure,"Device has reported syslog messages with a severity of ERRORS or higher:
+Jun  6 09:43:49 xdc2-spine-02 ConfigAgent: %SYS-3-CONFIG_SESSION_COMMIT_TIMER_TIMEDOUT: The commit timer on session cvp-provisioning-87fe0120-3526-45de-9e20-c04b3489c4cf has expired.The system configuration will be rolled back.
+ 
+",Verifies there are no syslog messages with a severity of ERRORS or higher.,Logging
+xdc2-leaf-01,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-leaf-01,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-leaf-01,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-leaf-01,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-leaf-01,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-leaf-01,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-leaf-01,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-leaf-01,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-leaf-01,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-leaf-01,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-leaf-01,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-leaf-01,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-leaf-01,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-leaf-01,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-leaf-01,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-leaf-01,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-leaf-01,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+xdc2-leaf-01,VerifyVxlanConfigSanity,success,,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+xdc2-leaf-02,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-leaf-02,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-leaf-02,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-leaf-02,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-leaf-02,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-leaf-02,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-leaf-02,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-leaf-02,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-leaf-02,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-leaf-02,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-leaf-02,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-leaf-02,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-leaf-02,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-leaf-02,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-leaf-02,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-leaf-02,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-leaf-02,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-leaf-02,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+xdc2-leaf-02,VerifyVxlanConfigSanity,success,,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+xdc2-leaf-03,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-leaf-03,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-leaf-03,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-leaf-03,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-leaf-03,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-leaf-03,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-leaf-03,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-leaf-03,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-leaf-03,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-leaf-03,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-leaf-03,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-leaf-03,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-leaf-03,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-leaf-03,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-leaf-03,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-leaf-03,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-leaf-03,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-leaf-03,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+xdc2-leaf-03,VerifyVxlanConfigSanity,success,,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+xdc2-leaf-04,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-leaf-04,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-leaf-04,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-leaf-04,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-leaf-04,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-leaf-04,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-leaf-04,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-leaf-04,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-leaf-04,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-leaf-04,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-leaf-04,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-leaf-04,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-leaf-04,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-leaf-04,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-leaf-04,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-leaf-04,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-leaf-04,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-leaf-04,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+xdc2-leaf-04,VerifyVxlanConfigSanity,success,,Verifies there are no VXLAN config-sanity inconsistencies.,VXLAN
+xdc2-spine-01,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-spine-01,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-spine-01,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-spine-01,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-spine-01,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-spine-01,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-spine-01,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-spine-01,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-spine-01,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-spine-01,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-spine-01,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-spine-01,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-spine-01,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-spine-01,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-spine-01,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-spine-01,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-spine-01,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-spine-01,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
+xdc2-spine-02,VerifyBGPPeerSession,success,,Verifies the session state of BGP peers.,BGP
+xdc2-spine-02,VerifyRunningConfigDiffs,success,,Verifies there is no difference between the running-config and the startup-config.,Configuration
+xdc2-spine-02,VerifyZeroTouch,success,,Verifies ZeroTouch is disabled.,Configuration
+xdc2-spine-02,VerifyLLDPNeighbors,success,,Verifies the connection status of the specified LLDP (Link Layer Discovery Protocol) neighbors.,Connectivity
+xdc2-spine-02,VerifyReachability,success,,Verifies point-to-point reachability between Ethernet interfaces.,Connectivity
+xdc2-spine-02,VerifyInterfaceErrDisabled,success,,Verifies there are no interfaces in the errdisabled state.,Interfaces
+xdc2-spine-02,VerifyInterfaceErrors,success,,Verifies that the interfaces error counters are equal to zero.,Interfaces
+xdc2-spine-02,VerifyInterfaceUtilization,success,,Verifies that the utilization of interfaces is below a certain threshold.,Interfaces
+xdc2-spine-02,VerifyInterfacesStatus,success,,Verifies the operational states of specified interfaces to ensure they match expected configurations.,Interfaces
+xdc2-spine-02,VerifyRoutingProtocolModel,success,,Verifies the configured routing protocol model.,Routing
+xdc2-spine-02,VerifySTPCounters,success,,Verifies there is no errors in STP BPDU packets.,STP
+xdc2-spine-02,VerifyAgentLogs,success,,Verifies there are no agent crash reports.,System
+xdc2-spine-02,VerifyCoredump,success,,Verifies there are no core dump files.,System
+xdc2-spine-02,VerifyFileSystemUtilization,success,,Verifies that no partition is utilizing more than 75% of its disk space.,System
+xdc2-spine-02,VerifyMaintenance,success,,Verifies that the device is not currently under or entering maintenance.,System
+xdc2-spine-02,VerifyMemoryUtilization,success,,Verifies whether the memory utilization is below 75%.,System
+xdc2-spine-02,VerifyNTP,success,,Verifies if NTP is synchronised.,System
+xdc2-spine-02,VerifyReloadCause,success,,Verifies the last reload cause of the device.,System
