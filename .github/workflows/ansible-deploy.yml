@@ -25,7 +25,7 @@ jobs:
 
       - name: Update AVD Inventory Files
         run: |
-          python update_inventory.py
+          python3 update_inventory.py
 
       # 5. Executes your first playbook, build configs
       - name: Run Playbook 1 (Build Configuration)
