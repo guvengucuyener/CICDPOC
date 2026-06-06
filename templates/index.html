@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Provisioning Board</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        input { width: 95%; padding: 4px; border: 1px solid #ccc; }
+        .btn { padding: 8px 15px; cursor: pointer; margin-right: 5px; }
+        .btn-add { background-color: #28a745; color: white; border: none; }
+        .btn-delete { background-color: #dc3545; color: white; border: none; }
+        .btn-commit { background-color: #007bff; color: white; border: none; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <h2>Network Deployment Table</h2>
+    
+    <table id="networkTable">
+        <thead>
+            <tr>
+                <th>vlanId</th><th>sviVirtualIpAddress</th><th>device</th><th>port</th>
+                <th>Mode</th><th>Vlan</th><th>Mlag</th><th>PoID</th><th>servername</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="140" class="vlanId"></td>
+                <td><input type="text" value="10.10.140.1/24" class="svi"></td>
+                <td><input type="text" value="ceos5" class="device"></td>
+                <td><input type="text" value="Ethernet3" class="port"></td>
+                <td><input type="text" value="access" class="mode"></td>
+                <td><input type="text" value="140" class="vlan"></td>
+                <td><input type="text" value="Yes" class="mlag"></td>
+                <td><input type="text" value="56" class="poid"></td>
+                <td><input type="text" value="server56" class="server"></td>
+                <td><button class="btn btn-delete" onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-add" onclick="addRow()">Add Line</button>
+    <hr>
+    <button class="btn btn-commit" onclick="commitData()">Commit & Run Playbooks</button>
+
+    <script>
+        function addRow() {
+            const tbody = document.querySelector("#networkTable tbody");
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><input type="text" class="vlanId"></td>
+                <td><input type="text" class="svi"></td>
+                <td><input type="text" class="device"></td>
+                <td><input type="text" class="port"></td>
+                <td><input type="text" class="mode"></td>
+                <td><input type="text" class="vlan"></td>
+                <td><input type="text" class="mlag"></td>
+                <td><input type="text" class="poid"></td>
+                <td><input type="text" class="server"></td>
+                <td><button class="btn btn-delete" onclick="deleteRow(this)">Delete</button></td>
+            `;
+            tbody.appendChild(newRow);
+        }
+
+        function deleteRow(button) {
+            const row = button.parentNode.parentNode;
+            if(document.querySelectorAll("#networkTable tbody tr").length > 1) {
+                row.parentNode.removeChild(row);
+            } else {
+                alert("Must keep at least one row.");
+            }
+        }
+
+        function commitData() {
+            const rows = document.querySelectorAll("#networkTable tbody tr");
+            const payload = [];
+            
+            rows.forEach(row => {
+                payload.push({
+                    vlanId: row.querySelector(".vlanId").value,
+                    sviVirtualIpAddress: row.querySelector(".svi").value,
+                    device: row.querySelector(".device").value,
+                    port: row.querySelector(".port").value,
+                    Mode: row.querySelector(".mode").value,
+                    Vlan: row.querySelector(".vlan").value,
+                    Mlag: row.querySelector(".mlag").value,
+                    PoID: row.querySelector(".poid").value,
+                    servername: row.querySelector(".server").value
+                });
+            });
+
+            fetch('/commit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => alert(data.message))
+            .catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>
