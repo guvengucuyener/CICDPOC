@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+run_ansible:
+  stage: deploy
+  tags:
+    - lab-runner  # This ensures it runs on your local server's runner
+  script:
+    - echo "Parsing data from Flask UI..."
+    # GitLab passes the variable we sent via API as an environment variable ($NETWORK_DATA)
+    - echo "$NETWORK_DATA" > ui_input.json
+    - echo "Running Playbook 1..."
+    - ansible-playbook build.yml -i inventory2.yml 
+    - echo "Running Playbook 2..."
+    - ansible-playbook deploy-cvp.yml -i inventory2.yml
