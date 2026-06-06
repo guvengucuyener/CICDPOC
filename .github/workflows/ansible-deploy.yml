@@ -1,0 +1,39 @@
+name: Execute Provisioning Playbooks
+
+# 1. This tells GitHub the pipeline is triggered manually via an API call
+on:
+  workflow_dispatch:
+    inputs:
+      network_data:
+        description: 'JSON configuration matrix passed from Flask Web UI'
+        required: true
+
+jobs:
+  deploy_network:
+    # 2. CRITICAL: Tells GitHub to run this job on your local machine's runner
+    runs-on: self-hosted  
+    
+    steps:
+      # 3. Pulls down your playbooks and inventory files into the runner workspace
+      - name: Checkout Code Base
+        uses: actions/checkout@v4
+
+      # 4. Takes the table string from your Flask UI and dumps it into a local file
+      - name: Parse Web Data to File
+        run: |
+          echo '${{ github.event.inputs.network_data }}' > ui_input.json
+
+      # 5. Executes your first playbook, build configs
+      - name: Run Playbook 1 (Build Configuration)
+        run: |
+          ansible-playbook build.yml -i inventory2.yml 
+
+      # 6. Executes your second playbook to push changes to the CVP
+      - name: Run Playbook 2 (Deploy Configurations)
+        run: |
+          ansible-playbook deploy-cvp.yml -i inventory2.yml
+
+      # 7. Run ANTA
+      - name: Run ANTA (Deploy Configurations)
+        run: |
+          ansible-playbook anta.yml -i inventory2.yml
