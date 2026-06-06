@@ -22,6 +22,9 @@ jobs:
       - name: Parse Web Data to File
         run: |
           echo '${{ github.event.inputs.network_data }}' > ui_input.json
+      - name: test sw connectivity
+        run: |
+          ping -c 2 192.168.154.2
 
       - name: Update AVD Inventory Files
         run: |
