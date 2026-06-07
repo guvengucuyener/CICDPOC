@@ -48,4 +48,4 @@ jobs:
       # Run ANTA for additinal tests
       - name: Run ANTA (aditinal tests)
         run: |
-          anta nrfu --username admin --password admin --enable --inventory anta_inventory.yml --catalog anta2.yml table
+          anta nrfu --username admin --password admin --enable --inventory anta_inventory.yml --catalog anta2.yml  md-report --md-output anta2_raport/antaraport.md
