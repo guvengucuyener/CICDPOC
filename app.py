@@ -1,13 +1,18 @@
 import os
 import requests
-import json
 from flask import Flask, render_template, request, jsonify
+import json
 
 app = Flask(__name__)
 
-GITLAB_URL = "https://gitlab.com" 
-PROJECT_ID = "82944819" 
-PERSONAL_ACCESS_TOKEN = "glpat-zRXMkypociXWXU7khBiZtWM6MQpvOjEKdTpuNXQ2YQ8.01.170mtdv3o"
+# Core Configurations for GitHub
+# This pulls the token dynamically from the ~/.bashrc variable we created earlier
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") 
+
+# TODO: Change these strings to match your real GitHub setup!
+REPO_OWNER = "guvengucuyener"  # Your GitHub Username
+REPO_NAME = "CICDPOC"          # Your GitHub Repository Name
+WORKFLOW_FILE = "ansible-deploy.yml"
 
 @app.route('/')
 def index():
@@ -15,30 +20,33 @@ def index():
 
 @app.route('/commit', methods=['POST'])
 def commit():
-    ui_data = request.json  # Raw data from the HTML table
+    if not GITHUB_TOKEN:
+        return jsonify({"status": "error", "message": "System Error: GITHUB_TOKEN environment variable is missing on this server."}), 500
+
+    ui_data = request.json  # Array of rows from the HTML table
     
-    # 1. SAVE THE DATA LOCALLY ON THE SERVER INSTEAD OF SENDING TO GITLAB
-    # We save it to a shared temp directory on your machine
-    local_file_path = "/tmp/ui_input.json"
-    with open(local_file_path, "w") as f:
-        json.dump(ui_data, f)
-        
-    # 2. TRIGGER THE GITLAB PIPELINE CLEANLY (NO VARIABLES = NO SECURITY ERROR)
-    url = f"{GITLAB_URL}/api/v4/projects/{PROJECT_ID}/pipeline"
+    url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/workflows/{WORKFLOW_FILE}/dispatches"
+    
     headers = {
-        "PRIVATE-TOKEN": PERSONAL_ACCESS_TOKEN
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
     }
+    
     payload = {
-        "ref": "main"  # No "variables" block here anymore!
+        "ref": "main",
+        "inputs": {
+            # CRITICAL CHANGE HERE: Convert the Python dictionary/list to a strict JSON string!
+            "network_data": json.dumps(ui_data)  
+        }
     }
     
     response = requests.post(url, json=payload, headers=headers)
-    print(f"GitLab API Response: {response.status_code} - {response.text}")
+    print(f"GitHub API Response Status: {response.status_code}")
     
-    if response.status_code == 201:
-        return jsonify({"status": "success", "message": "Pipeline started successfully!"}), 200
+    if response.status_code == 204:
+        return jsonify({"status": "success", "message": "Pipeline triggered successfully on GitHub!"}), 200
     else:
-        return jsonify({"status": "error", "message": f"GitLab Error: {response.text}"}), response.status_code
-
+        return jsonify({"status": "error", "message": f"GitHub API Error: {response.text}"}), response.status_code
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
