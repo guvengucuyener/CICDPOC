@@ -15,9 +15,9 @@
 | ⚙️ Run Metric | 📝 Details |
 | :- | :- |
 | **ANTA Version** | v1.8.0 |
-| **Test Execution Start Time** | 2026-06-07 14:32:23.923+00:00 |
-| **Test Execution End Time** | 2026-06-07 14:32:27.594+00:00 |
-| **Total Duration** | 3 seconds |
+| **Test Execution Start Time** | 2026-06-07 14:40:50.856+00:00 |
+| **Test Execution End Time** | 2026-06-07 14:40:52.521+00:00 |
+| **Total Duration** | 1 second |
 | **Total Devices In Inventory** | 6 |
 | **Devices Unreachable At Setup** | None |
 | **Devices Filtered At Setup** | None |
@@ -29,7 +29,7 @@
 
 | Total Tests | ✅&nbsp;Success | ⏭️&nbsp;Skipped | ❌&nbsp;Failure | ❗&nbsp;Error |
 | :- | :- | :- | :- | :- |
-| 13 | 10 | 2 | 1 | 0 |
+| 13 | 11 | 2 | 0 | 0 |
 
 ### 🔌 Summary Totals Device Under Test <a id="summary-totals-device-under-test"></a>
 
@@ -37,7 +37,7 @@
 | :- | :- | :- | :- | :- | :- | :- | :- |
 | **xdc2-leaf-01** | 2 | 2 | 0 | 0 | 0 | - | - |
 | **xdc2-leaf-02** | 2 | 2 | 0 | 0 | 0 | - | - |
-| **xdc2-leaf-03** | 3 | 2 | 0 | 1 | 0 | - | Connectivity |
+| **xdc2-leaf-03** | 3 | 3 | 0 | 0 | 0 | - | - |
 | **xdc2-leaf-04** | 2 | 2 | 0 | 0 | 0 | - | - |
 | **xdc2-spine-01** | 2 | 1 | 1 | 0 | 0 | VXLAN | - |
 | **xdc2-spine-02** | 2 | 1 | 1 | 0 | 0 | VXLAN | - |
@@ -46,7 +46,7 @@
 
 | Test Category | Total Tests | ✅&nbsp;Success | ⏭️&nbsp;Skipped | ❌&nbsp;Failure | ❗&nbsp;Error |
 | :- | :- | :- | :- | :- | :- |
-| **Connectivity** | 1 | 0 | 0 | 1 | 0 |
+| **Connectivity** | 1 | 1 | 0 | 0 | 0 |
 | **Interfaces** | 6 | 6 | 0 | 0 | 0 |
 | **VXLAN** | 6 | 4 | 2 | 0 | 0 |
 
@@ -58,7 +58,7 @@
 | xdc2-leaf-01 | VXLAN | VerifyVxlanConfigSanity | Verifies there are no VXLAN config-sanity inconsistencies. | - | ✅&nbsp;Success | - |
 | xdc2-leaf-02 | Interfaces | VerifySVI | Verifies the status of all SVIs. | - | ✅&nbsp;Success | - |
 | xdc2-leaf-02 | VXLAN | VerifyVxlanConfigSanity | Verifies there are no VXLAN config-sanity inconsistencies. | - | ✅&nbsp;Success | - |
-| xdc2-leaf-03 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | - | ❌&nbsp;Failure | Destination 10.10.140.10 in VRF DC - Packet loss detected - Transmitted: 2 Received: 0 |
+| xdc2-leaf-03 | Connectivity | VerifyReachability | Test network reachability to one or many destination IP(s). | - | ✅&nbsp;Success | - |
 | xdc2-leaf-03 | Interfaces | VerifySVI | Verifies the status of all SVIs. | - | ✅&nbsp;Success | - |
 | xdc2-leaf-03 | VXLAN | VerifyVxlanConfigSanity | Verifies there are no VXLAN config-sanity inconsistencies. | - | ✅&nbsp;Success | - |
 | xdc2-leaf-04 | Interfaces | VerifySVI | Verifies the status of all SVIs. | - | ✅&nbsp;Success | - |

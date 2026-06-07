@@ -6,7 +6,8 @@ anta.tests.vxlan:
 anta.tests.connectivity:
   - VerifyReachability:
       hosts:
-        - destination: 10.10.140.10
+        - source: Loopback10
+          destination: 10.10.140.10
           vrf: DC
           df_bit: True
           size: 100
