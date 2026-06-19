@@ -5,6 +5,7 @@ l3leaf,xdc1-leaf-02,,Ethernet1,spine,xdc1-spine-01,,Ethernet2,True
 l3leaf,xdc1-leaf-02,,Ethernet2,spine,xdc1-spine-02,,Ethernet2,True
 l3leaf,xdc1-leaf-03,,Ethernet1,spine,xdc1-spine-01,,Ethernet3,True
 l3leaf,xdc1-leaf-03,,Ethernet2,spine,xdc1-spine-02,,Ethernet3,True
+l3leaf,xdc1-leaf-03,,Ethernet5,server,server4,,PCI1,True
 l3leaf,xdc1-leaf-04,,Ethernet1,spine,xdc1-spine-01,,Ethernet4,True
 l3leaf,xdc1-leaf-04,,Ethernet2,spine,xdc1-spine-02,,Ethernet4,True
 spine,xdc1-spine-01,,Ethernet1,l3leaf,xdc1-leaf-01,,Ethernet1,True

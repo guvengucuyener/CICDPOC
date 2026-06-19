@@ -7,7 +7,7 @@ anta.tests.connectivity:
   - VerifyReachability:
       hosts:
         - source: Loopback10
-          destination: 10.10.140.10
+          destination: 10.10.11.10
           vrf: DC
           df_bit: True
           size: 100
