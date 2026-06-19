@@ -10,7 +10,7 @@ servers:
         # Device ports where the server ports are connected.
         switch_ports: [Ethernet5]
         # Device names where the server ports are connected.
-        switches: [xdc1-leaf-04]
+        switches: [xdc1-leaf-03]
         # VLANs that will be configured on these ports.
         vlans: 11-12
         # Native VLAN to be used on these ports.

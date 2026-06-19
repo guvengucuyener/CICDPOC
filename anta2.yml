@@ -12,5 +12,5 @@ anta.tests.connectivity:
           df_bit: True
           size: 100
       filters:
-        tags: ['xdc2-leaf-03']
+        tags: ['xdc1-leaf-03']
 
