@@ -1,20 +1,20 @@
 anta_inventory:
   hosts:
-  - host: 192.168.154.6
-    name: xdc2-spine-01
+  - host: 192.168.154.15
+    name: xdc1-spine-01
     tags: ['fabric', 'spine']
-  - host: 192.168.154.7
-    name: xdc2-spine-02
+  - host: 192.168.154.16
+    name: xdc1-spine-02
     tags: ['fabric', 'spine']
-  - host: 192.168.154.3
-    name: xdc2-leaf-01
+  - host: 192.168.154.13
+    name: xdc1-leaf-01
     tags: ['fabric', 'leaf']
-  - host: 192.168.154.9
-    name: xdc2-leaf-02
+  - host: 192.168.154.10
+    name: xdc1-leaf-02
     tags: ['fabric', 'leaf']
-  - host: 192.168.154.8
-    name: xdc2-leaf-03
+  - host: 192.168.154.11
+    name: xdc1-leaf-03
     tags: ['fabric', 'leaf']
-  - host: 192.168.154.2
-    name: xdc2-leaf-04
+  - host: 192.168.154.14
+    name: xdc1-leaf-04
     tags: ['fabric', 'leaf']

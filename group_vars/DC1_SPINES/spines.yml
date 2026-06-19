@@ -13,12 +13,12 @@ spine:
   # Define variables per node
   nodes:
     # The Node Name is used as "hostname"
-    - name: ceos9
+    - name: xdc1-spine-01
       # Unique identifier used for IP addressing and other algorithms
       id: 1
       # Node management interface IPv4 address
-      mgmt_ip: 172.20.20.35/24
+      mgmt_ip: 192.168.154.15/24
 
-    - name: ceos10
+    - name: xdc1-spine-02
       id: 2
-      mgmt_ip: 172.20.20.22/24
+      mgmt_ip: 192.168.154.16/24

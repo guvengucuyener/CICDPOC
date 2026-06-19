@@ -16,24 +16,24 @@ all:
 
     FABRIC:
       children:
-        DC2_FABRIC:
+        DC1_FABRIC:
           children:
-            DC2_SPINES:
+            DC1_SPINES:
               hosts:
-                ceos9:
-                  ansible_host: 172.20.20.35
-                ceos10:
-                  ansible_host: 172.20.20.22
-            DC2_L3_LEAVES:
+                xdc1-spine-01:
+                  ansible_host: 192.168.154.15
+                xdc1-spine-02:
+                  ansible_host: 192.168.154.16
+            DC1_L3_LEAVES:
               hosts:
-                ceos11:
-                  ansible_host: 172.20.20.29
-                ceos12:
-                  ansible_host: 172.20.20.21
-                ceos13:
-                  ansible_host: 172.20.20.20
-                ceos14:
-                  ansible_host: 172.20.20.19
+                xdc1-leaf-01:
+                  ansible_host: 192.168.154.13
+                xdc1-leaf-02:
+                  ansible_host: 192.168.154.10
+                xdc1-leaf-03:
+                  ansible_host: 192.168.154.11
+                xdc1-leaf-04:
+                  ansible_host: 192.168.154.14
     NETWORK_SERVICES:
       children:
         DC2_L3_LEAVES:
