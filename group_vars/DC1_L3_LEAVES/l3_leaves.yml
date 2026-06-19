@@ -9,8 +9,7 @@ l3leaf:
     # Pool of IPv4 addresses to configure interface Loopback0 used for BGP EVPN sessions
     loopback_ipv4_pool: 10.255.0.0/27
     # Offset all assigned loopback IP addresses.
-    # Required when the < loopback_ipv4_pool > is same for 2 different node_types (like spine and l3leaf) to avoid over-lapp
-ing IPs.
+    # Required when the < loopback_ipv4_pool > is same for 2 different node_types (like spine and l3leaf) to avoid over-lapping IPs.
     # For example, set the minimum offset l3leaf.defaults.loopback_ipv4_offset: < total # spine switches > or vice versa.
     loopback_ipv4_offset: 2
     # Definition of pool of IPs to be used as Virtual Tunnel EndPoint (VXLAN origin and destination IPs)
@@ -40,6 +39,7 @@ ing IPs.
         - name: xdc1-leaf-01
           id: 1
           mgmt_ip: 192.168.154.13/24
+          mgmt_interface: Management0
     - group: xdc1-leaf-02
       # ASN to be used by BGP for the group. Both devices in the MLAG pair will use the same BGP ASN
       bgp_as: 65102
@@ -48,6 +48,7 @@ ing IPs.
         - name: xdc1-leaf-02
           id: 2
           mgmt_ip: 192.168.154.10/24
+          mgmt_interface: Management0
     - group: xdc1-leaf-03
       # ASN to be used by BGP for the group. Both devices in the MLAG pair will use the same BGP ASN
       bgp_as: 65103
@@ -56,6 +57,7 @@ ing IPs.
         - name: xdc1-leaf-03
           id: 3
           mgmt_ip: 192.168.154.11/24
+          mgmt_interface: Management0
     - group: xdc1-leaf-04
       # ASN to be used by BGP for the group. Both devices in the MLAG pair will use the same BGP ASN
       bgp_as: 65104
@@ -64,3 +66,4 @@ ing IPs.
         - name: xdc1-leaf-04
           id: 4
           mgmt_ip: 192.168.154.14/24
+          mgmt_interface: Management0

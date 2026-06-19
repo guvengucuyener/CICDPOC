@@ -18,7 +18,9 @@ spine:
       id: 1
       # Node management interface IPv4 address
       mgmt_ip: 192.168.154.15/24
+      mgmt_interface: Management0
 
     - name: xdc1-spine-02
       id: 2
       mgmt_ip: 192.168.154.16/24
+      mgmt_interface: Management0
