@@ -33,17 +33,17 @@ jobs:
       # 6. Executes your first playbook, build configs
       - name: Run Playbook 1 (Build Configuration)
         run: |
-          ansible-playbook build.yml -i inventory2.yml 
+          ansible-playbook build.yml -i inventory.yml 
 
       # 7. Executes your second playbook to push changes to the CVP
       - name: Run Playbook 2 (Deploy Configurations)
         run: |
-          ansible-playbook deploy-cvp.yml -i inventory2.yml
+          ansible-playbook deploy-cvp.yml -i inventory.yml
 
       # 8. Run ANTA for AVD
       - name: Run ANTA (Deploy Configurations)
         run: |
-          ansible-playbook anta.yml -i inventory2.yml
+          ansible-playbook anta.yml -i inventory.yml
 
       # Run ANTA for additinal tests
       - name: Run ANTA (aditinal tests)
