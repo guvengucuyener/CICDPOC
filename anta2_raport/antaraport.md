@@ -15,9 +15,9 @@
 | ⚙️ Run Metric | 📝 Details |
 | :- | :- |
 | **ANTA Version** | v1.8.0 |
-| **Test Execution Start Time** | 2026-06-19 15:13:48.581+00:00 |
-| **Test Execution End Time** | 2026-06-19 15:13:49.161+00:00 |
-| **Total Duration** | 580 milliseconds |
+| **Test Execution Start Time** | 2026-06-19 15:20:21.037+00:00 |
+| **Test Execution End Time** | 2026-06-19 15:20:21.579+00:00 |
+| **Total Duration** | 541 milliseconds |
 | **Total Devices In Inventory** | 6 |
 | **Devices Unreachable At Setup** | None |
 | **Devices Filtered At Setup** | None |

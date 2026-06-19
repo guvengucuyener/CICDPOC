@@ -36,11 +36,11 @@ all:
                   ansible_host: 192.168.154.14
     NETWORK_SERVICES:
       children:
-        DC2_L3_LEAVES:
-        DC2_L2_LEAVES:
+        DC1_L3_LEAVES:
+        DC1_L2_LEAVES:
     CONNECTED_ENDPOINTS:
       children:
-        DC2_L3_LEAVES:
-        DC2_L2_LEAVES:
+        DC1_L3_LEAVES:
+        DC1_L2_LEAVES:
 
 
